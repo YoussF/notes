@@ -1,3 +1,8 @@
+---
+
+
+---
+
 <h1 id="waterfall-development-and-its-problems">Waterfall Development and its problems</h1>
 <h2 id="history-of-the-waterfall-model">History of the Waterfall model</h2>
 <p>The waterfall model was first described by Winston Royce in 1970 in his article, Managing the Development of Large Software Systems. He didn’t refer to this model as the waterfall model, but he is credited with the first formal description of what we know as the waterfall model. Royce’s original article consists of the following stages :</p>
@@ -95,9 +100,9 @@
 <ul>
 <li>Software evolves over time.</li>
 <li>Adaptive planning, evolutionary development, early delivery.</li>
-<li>Deliver value to the business sooner.<br>
-<img src="https://www.spf-consulting.ch/file/2018/09/agile-project-management-vs-waterfall-project-management.png" alt="enter image description here"></li>
+<li>Deliver value to the business sooner.</li>
 </ul>
+<p><img src="https://www.spf-consulting.ch/file/2018/09/agile-project-management-vs-waterfall-project-management.png" alt="enter image description here"></p>
 <h2 id="the-history-of-agile.">The History of Agile.</h2>
 <p>On February the 11th to the 13th, 2001 at the lodge at the Snowbird Ski Resort in the mountains of Utah, 17 people met to try and find common ground. What emerged was the Agile Software Development Manifesto. Representatives from extreme programming, Scrum, DSTM, adaptive software development, crystal, feature-driven development, pragmatic programming, and other sympathetic to the need of alternative to documentation-driven, heavyweight software development processes convened. This group named themselves The Agile Alliance.</p>
 <h2 id="the-agile-manifesto-4-core-values.">The Agile Manifesto 4 Core Values.</h2>
@@ -105,14 +110,22 @@
 <p>We are uncovering better ways of developing software by doing it and helping others do it. Through this work we have come to value :</p>
 </blockquote>
 <ul>
-<li><strong>Individuals and interactions over processes and tools.</strong><br>
-Software systems are built by people, and to do this properly, they all need to work together and have good communication between all parties. It isn’t just software developers, but it includes QA, business analysts, project managers, business sponsors, and senior leadership, and anyone else involved in the project at your organization. Processes and tools are important, but they’re irrelevant if the people working on the project can’t work together effectively and communicate.</li>
-<li><strong>Working software over comprehensive documentation.</strong><br>
-Let’s face it, who reads a 100-page product specs. I certainly don’t. Your business users would much prefer to have small pieces of functionality delivered quickly so they can then provide feedback. These pieces of functionality may even be enough to deploy to production to gain benefit from them early. Not all documentation is bad though. When my teams work on a project, they use Visio or similar tools to produce diagrams of, and this is not an exhaustive list, deployment environments, database schemas, software layers, and news case diagrams. We normally print these out on an A3 printer and put them up on the walls so they are visible to everyone. Small, useful pieces of documentation like this are invaluable, 100-page product specs are not as 9 times out of 10 they’re invalid and out of date before you’re finished writing them. So remember, the primary goal is to develop software that gives the business benefit, not extensive documentation.</li>
-<li><strong>Customer collaboration over contract negotiation.</strong><br>
-All the software that you develop should be written with your customer’s involvement. To be successful at software development, you really need to work with them daily. This means inviting them to your standups, demoing to them regularly, and inviting them to any design meetings. At the end of the day, only the customer can tell you what they really want. They may not be able to give you all the technical details, but that is what your team is there for, to collaborate with them, understand their requirements, and to deliver on them</li>
-<li><strong>Responding to change over following a plan.</strong><br>
-Your customer or business sponsor may change their minds about what is being built. This may be because you’ve given them new ideas from the software you delivered in a previous situation. It may be because the company’s priorities have changed, or a new change has come into force. The key thing here is you should embrace it. Yes, some time might get thrown away, and some time may be left, but if you are working in short situations, then this time lost is minimized. Change is a reality of software development, a reality that your software process must reflect. There’s nothing wrong with having a project plan. In fact, I’ll be worried about any project that didn’t have one. However, a project plan must be flexible enough to be changed. There must be room to change it as your situation changes, otherwise your plan quickly becomes irrelevant.</li>
+<li>
+<p><strong>Individuals and interactions over processes and tools.</strong><br>
+Software systems are built by people, and to do this properly, they all need to work together and have good communication between all parties. It isn’t just software developers, but it includes QA, business analysts, project managers, business sponsors, and senior leadership, and anyone else involved in the project at your organization. Processes and tools are important, but they’re irrelevant if the people working on the project can’t work together effectively and communicate.</p>
+</li>
+<li>
+<p><strong>Working software over comprehensive documentation.</strong><br>
+Let’s face it, who reads a 100-page product specs. I certainly don’t. Your business users would much prefer to have small pieces of functionality delivered quickly so they can then provide feedback. These pieces of functionality may even be enough to deploy to production to gain benefit from them early. Not all documentation is bad though. When my teams work on a project, they use Visio or similar tools to produce diagrams of, and this is not an exhaustive list, deployment environments, database schemas, software layers, and news case diagrams. We normally print these out on an A3 printer and put them up on the walls so they are visible to everyone. Small, useful pieces of documentation like this are invaluable, 100-page product specs are not as 9 times out of 10 they’re invalid and out of date before you’re finished writing them. So remember, the primary goal is to develop software that gives the business benefit, not extensive documentation.</p>
+</li>
+<li>
+<p><strong>Customer collaboration over contract negotiation.</strong><br>
+All the software that you develop should be written with your customer’s involvement. To be successful at software development, you really need to work with them daily. This means inviting them to your standups, demoing to them regularly, and inviting them to any design meetings. At the end of the day, only the customer can tell you what they really want. They may not be able to give you all the technical details, but that is what your team is there for, to collaborate with them, understand their requirements, and to deliver on them</p>
+</li>
+<li>
+<p><strong>Responding to change over following a plan.</strong><br>
+Your customer or business sponsor may change their minds about what is being built. This may be because you’ve given them new ideas from the software you delivered in a previous situation. It may be because the company’s priorities have changed, or a new change has come into force. The key thing here is you should embrace it. Yes, some time might get thrown away, and some time may be left, but if you are working in short situations, then this time lost is minimized. Change is a reality of software development, a reality that your software process must reflect. There’s nothing wrong with having a project plan. In fact, I’ll be worried about any project that didn’t have one. However, a project plan must be flexible enough to be changed. There must be room to change it as your situation changes, otherwise your plan quickly becomes irrelevant.</p>
+</li>
 </ul>
 <h2 id="the-agile-manifesto-12-principles.">The Agile Manifesto 12 Principles.</h2>
 <p>On to pinning the four core values of the Agile Manifesto, we have 12 principles that should be followed. These 12 principles can be split down into three main groups: Regular delivery of software, Team communication, Excellence in design.</p>
