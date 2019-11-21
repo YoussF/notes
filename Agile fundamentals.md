@@ -1,3 +1,8 @@
+---
+
+
+---
+
 <h1 id="waterfall-development-and-its-problems">Waterfall Development and its problems</h1>
 <h2 id="history-of-the-waterfall-model">History of the Waterfall model</h2>
 <p>The waterfall model was first described by Winston Royce in 1970 in his article, Managing the Development of Large Software Systems. He didn’t refer to this model as the waterfall model, but he is credited with the first formal description of what we know as the waterfall model. Royce’s original article consists of the following stages :</p>
@@ -234,5 +239,18 @@ Kanban is applied to software development, is a pool-based planning and executio
 </li>
 </ul>
 <h2 id="roles-within-an-agile-team.">Roles Within an Agile Team.</h2>
+<ul>
+<li>Agile teams are software development teams first and members of a department or business unit second.</li>
+<li>A team should have a product or domain expert.</li>
+<li>A team has members with cross functional skills.</li>
+<li>A team should have some form of leadership role.</li>
+<li>A team can benefit from an agile coach or mentor.</li>
+</ul>
 <h2 id="summary">Summary</h2>
+<p>We covered what it is to be agile and how it differs to the more traditional waterfall software development process. The main visible difference with agile was that you deliver a business value sooner to the business by following an iterative development process as opposed to the more big bang approach with waterfall. A good way to think of this is that you deliver incrementally instead of all at once. We also looked at the history of agile with the formation of The Agile Alliance, who defined the Agile Manifesto. The Agile Manifesto represents a series of 4 core values and 12 principles that should guide you on how you develop software. We then looked at a series of different agile software development methodologies that’s in use today in different software development teams. The most common are extreme programming and Scrum, but lean development and kanban are also increasing in popularity. Finally, we looked at some of the different roles you would find in an agile team, from the development team itself to the product owners and domain experts, team leadership, and agile coaches. In the next module, we’ll look at some of the common misconceptions surrounding agile software developments. And also, some of the common mistakes made by new agile teams.</p>
+<h1 id="common-agile-misconceptions-and-mistakes">Common Agile Misconceptions and Mistakes</h1>
+<h2 id="introduction">Introduction</h2>
+<h2 id="common-agile-misconceptions">Common Agile Misconceptions</h2>
+<h2 id="common-mistakes-made-by-new-agile-teams">Common Mistakes Made by New Agile Teams</h2>
+<h2 id="summary-1">Summary</h2>
 
