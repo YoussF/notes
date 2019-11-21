@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Agile fundamentals</title>
-  <link rel="stylesheet" href="https://stackedit.io/style.css" />
-</head>
-
-<body class="stackedit">
-  <div class="stackedit__html"><h1 id="waterfall-development-and-its-problems">Waterfall Development and its problems</h1>
+<h1 id="waterfall-development-and-its-problems">Waterfall Development and its problems</h1>
 <h2 id="history-of-the-waterfall-model">History of the Waterfall model</h2>
 <p>The waterfall model was first described by Winston Royce in 1970 in his article, Managing the Development of Large Software Systems. He didn’t refer to this model as the waterfall model, but he is credited with the first formal description of what we know as the waterfall model. Royce’s original article consists of the following stages :</p>
 <ul>
@@ -259,7 +248,4 @@ Kanban is applied to software development, is a pool-based planning and executio
 <h2 id="common-agile-misconceptions">Common Agile Misconceptions</h2>
 <h2 id="common-mistakes-made-by-new-agile-teams">Common Mistakes Made by New Agile Teams</h2>
 <h2 id="summary-1">Summary</h2>
-</div>
-</body>
 
-</html>
