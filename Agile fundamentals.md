@@ -244,8 +244,56 @@ Kanban is applied to software development, is a pool-based planning and executio
 <h2 id="summary">Summary</h2>
 <p>We covered what it is to be agile and how it differs to the more traditional waterfall software development process. The main visible difference with agile was that you deliver a business value sooner to the business by following an iterative development process as opposed to the more big bang approach with waterfall. A good way to think of this is that you deliver incrementally instead of all at once. We also looked at the history of agile with the formation of The Agile Alliance, who defined the Agile Manifesto. The Agile Manifesto represents a series of 4 core values and 12 principles that should guide you on how you develop software. We then looked at a series of different agile software development methodologies that’s in use today in different software development teams. The most common are extreme programming and Scrum, but lean development and kanban are also increasing in popularity. Finally, we looked at some of the different roles you would find in an agile team, from the development team itself to the product owners and domain experts, team leadership, and agile coaches. In the next module, we’ll look at some of the common misconceptions surrounding agile software developments. And also, some of the common mistakes made by new agile teams.</p>
 <h1 id="common-agile-misconceptions-and-mistakes">Common Agile Misconceptions and Mistakes</h1>
-<h2 id="introduction">Introduction</h2>
 <h2 id="common-agile-misconceptions">Common Agile Misconceptions</h2>
+<ul>
+<li>
+<p><strong>Agile is ad hoc with no process control.</strong><br>
+To be agile, you need to adhere to the Agile Manifesto, but following the manifesto doesn’t mean you are using a defined process. The manifesto describes a set of ideals. There are various different processes and project management templates that you can apply to your projects to help them become agile. Extreme programming and Scrum are the two most popular, but lean and kanban are also becoming very popular. When you try to implement the manifesto items, you generally need to apply a lot of common sense and pragmatism to help you get to your goal, but if you want to wrap a more formal process around the how of agile as opposed to the why, then you would need to apply something like Scrum or extreme programming, which gives you more formal processes like epics, stories, iterations, standups, demos, retrospectives, test-driven development, and pair programming.</p>
+</li>
+<li>
+<p><strong>Agile is faster and/or cheaper.</strong><br>
+Running an agile team doesn’t mean you’ll finish a project quicker or for less money. It isn’t a direct money saver in that respect. What being agile is about is delivering value to the business sooner. You head towards working versions of the software quicker. At the end of each development iteration, you’re supposed to have working software to demo to the business. It may not have all the requirements in place, but what is there will work. This means rethinking about how you plan your workload in each iteration. Instead of delivering horizontal slices, like for example the data access layer this iteration and user interface in the next iteration, you think in vertical segments. This means you deliver the fine pieces of functionality in an iteration that may encompass work on the user interface and data access layer. It’s a mind shift change I’ve seen teams struggle with if they are used to working horizontally. But when they finally get it, the efficiency of a team is increased remarkably. Being agile is also about being able to respond to change. Requirements can change and businesses can change partway through a delivery. I’ve worked with teams that treat this as a real negative thing. If you want to be agile, you need to expect and embrace that things will change. The tools and processes of Scrum, for example, are designed to help you react to these changes in a more efficient manner.</p>
+</li>
+<li>
+<p><strong>Agile teams do not plan their work or write documentation.</strong><br>
+Being agile is not an excuse to avoid appropriate planning or writing documentation. Agile is an on-demand or just-in-time approach that encourages continuous planning and documentation, but only when it is needed for specific customer requirements. This allows customers and teams to determine if the planning or document adds value to the process or product. It creates an opportunity to emphasize valuable documents and eliminates anything that isn’t useful. Depending on what type of company you work for, formal documentation may not be something that you can avoid. For example, if you work in a very heavily regulated environment, then there’s lots of upfront documentation that may be needed for evidence and submission to a regulatory body. If this is the case, then a delivery team will need to take this documentation into account. I personally prefer to work with large diagrams instead of large documents and text. If you can, get these diagrams printed out onto A3 paper and then put them up all over the wall so you have something to refer to in your standups. With the planning side of this, you still need to do it. At the beginning of each iteration or sprint, you should have a planning session where you allocate user stories for iteration. The amount of stories you allocate will be based on the estimates given and the velocity of the previous iteration.</p>
+</li>
+<li>
+<p><strong>An agile project never ends.</strong><br>
+This might be true in some situations. You should continue to work on a project while the customer continues to get business value, and that value is worth more than the cost of developing it. Most projects in any industry have a point of diminishing returns. This is the ideal time for an agile project to end. This decision should come from the business, though, for it is then that you are delivering value.</p>
+</li>
+<li>
+<p><strong>Agile only works for small organizations.</strong><br>
+Agile works for projects, teams and organizations of any size, not just small projects. This doesn’t mean it will necessarily work for all organizations, but size is rarely a factor. Large and complex projects and organizations are often excellent candidates for an agile transformation where it is difficult or impossible to know all of your customers’ requirements in advance.</p>
+</li>
+<li>
+<p><strong>Without upfront planning, agile is wasteful.</strong><br>
+This assumes that your customer knows the details of all their requirements in advance. If this is true, then by all means undertake comprehensive upfront planning. However, in reality, this is rare and usually leads to greater waste of having to undertake and design and develop more work that was ultimately unnecessary.</p>
+</li>
+<li>
+<p><strong>Agile is not the solution to all your problems.</strong><br>
+Agile is a change in approach and culture that comes with its own sets of benefits and issues. If you are working in a well-established team that has not been following any agile processes, then changing them over will not be an instant transformation. You need to do it slowly and make sure everyone has a say in the decision-making process, otherwise you may hit resistance from team members who fear change, which is a perfectly normal human characteristic. Convincing your team isn’t the biggest hurdle, though. Your biggest challenge is making sure that your leadership team understands and wants to adopt agile as a way of working. Once you have achieved this and have leadership buy-in, then the rest of the adoption just takes time and patience as everyone adjusts.</p>
+</li>
+<li>
+<p><strong>Agile means no commitment.</strong><br>
+Some people think that agile teams don’t make commitments and that there are six to eight developers working until someone declares we’re done. This couldn’t be further from the truth. Successful agile teams are extremely realistic and transparent in what they promise to deliver. Scrum and extreme programming have the concept of a sprint backlog where the items that will be developed during that sprint are contained. Extreme programming teams sometimes allow a change if all the parties agree and the item being replaced hasn’t yet been started. In both cases, deferments, or not completing an item that was promised, is treated as an exceptional occurrence and not treated lightly. This commitment to making a cadence of delivering software in small increments builds a higher degree of trust between the team and other interested parties such as stakeholders, users, and customers. With Scrum, the team renews its commitment on all of the tenets that make Scrum successful, rapid feedback loops, collaboration, constant communications, and transparency. Often when teams are that communicative, there’s less of a demand for an iron-clad commitment. The trust and collaboration that results from teams working in this manner overrides the outdated requirement or commitments. This is in contrast to typical waterfall projects because everything is based on estimates with waterfall. Teams seldom deliver everything that’s promised. It’s not that they intentionally underdeliver, and it’s not a reflection of the skills or the work ethic. Estimates are seldom correct and fixing scope and schedules based on inaccurate estimates often leads to features being dropped from the release.</p>
+</li>
+<li>
+<p><strong>Agile development is not predictable.</strong><br>
+Successful agile teams bring predictability to software development because every step of the way they’re communicating, deploying real code, and adapting to change, and keeping any documentation current. Every two weeks or so, they release a set of features that they stated two weeks prior that they were going to work on. They meet expectations and deliver on their predictions.</p>
+</li>
+<li>
+<p><strong>Agile is a silver bullet.</strong><br>
+Avid supporters of agile would sometimes claim that moving to agile will fix all of your problems. This isn’t the case. It’s important to stress that the Agile Manifesto is a set of values and principles that define a core attribute for software development. These values point to collaboration, rapid feedback loops, and quality. In this way, Agile exposes your problems. Before any issues can be addressed, they need to be surfaced. Once exposed, teams can work to eliminate friction and any blocking issues.</p>
+</li>
+<li>
+<p><strong>There is only one way to do agile.</strong><br>
+The Agile Manifesto consists of 4 core values and 12 principles. It doesn’t document any actual implementation details. There are many interpretations of agile that form different methodologies like Scrum, extreme programming, kanban, feature-driven development, to name a few. Each style has its own benefits and weaknesses and you must evaluate your own situations to decide which methodology is best fit for your team. Extreme programming and Scrum are the two most popular methodologies in use today, but also lean and kanban are becoming very popular. As long as you are sticking to the Agile Manifesto’s values and principles and delivering high-value software regularly to your customers, you should be considered agile.</p>
+</li>
+<li>
+<p><strong>Agile doesn’t need upfront design.</strong></p>
+</li>
+</ul>
 <h2 id="common-mistakes-made-by-new-agile-teams">Common Mistakes Made by New Agile Teams</h2>
 <h2 id="summary-1">Summary</h2>
 
