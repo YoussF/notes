@@ -53,6 +53,8 @@ docker ps -q | xargs -n 1 docker inspect --format '{{range .NetworkSettings.Netw
 docker volume ls
 # Remove specific Volume
 docker volume rm [VOLUME_NAME]
+# Remove all unused Volume
+docker volume rm $(docker volume ls -q)
 ```
 
 ## Docker Containers
@@ -61,6 +63,8 @@ docker volume rm [VOLUME_NAME]
 docker container stop $(docker container ls -aq)
 # Remove all running containers:
 docker container rm $(docker container ls -aq)
+# Stop and remove all containers:
+docker stop $(docker container ls -aq) && docker rm $(docker container ls -aq)
 #Remove all caches images:
 docker rmi $(docker images -a -q)
 ```
@@ -74,3 +78,10 @@ docker-compose up -d
 # down
 docker-compose down
 ```
+
+## Advantages of conternerized applications for developers:
+
+- **Accelerate Developer Onboarding** A new hired dev can get an entire environment up and running very quickly. With the use of things like docker-compose, etc...
+- **Eliminate App Conflicts** We can run multiple version of the same app very easily.
+- **Environment Consistency** Developers can replicate the production environment on there own machines.
+- **Ship Software Faster**
