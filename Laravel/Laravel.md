@@ -45,6 +45,16 @@ make:seeder UserTableSeeder               # Make user database table seeder
 
 make:test            Create a new test class
 ```
+
+# Composer
+```bash
+composer create-project laravel/laravel folder_name
+composer install
+composer update
+composer dump-autoload [--optimize]
+composer self-update
+```
+
 ## Eloquent
 ```php
 <?
@@ -56,7 +66,9 @@ App\User::findOrFail(1);
 App\User::find([1, 2, 3]);
 # Find mathcing records ids or thow not found Exception if any is missing
 App\User::findOrFail([1, 2, 3]);
-
+# Load model with relationships
+App\User::with('posts.comments')->findOrFail(300)
+App\Compagny::with(['account.owner','contacts'])->find(1)
 # Filter Query
 App\User::where('active', 1);
 # Multiple filters
@@ -152,6 +164,9 @@ $billable->newSubscription('main', 'monthly')->trialDays(10)->withCoupon('AMSTER
 ## Tinker
 ```php
 <?
+// Faker
+$faker = Faker\Factory::create();
+$faker->name
 // Log as user id 1
 auth()->loginUsingId(1)
 ```
@@ -201,3 +216,4 @@ try {
 #### References
 - [Laravel 6.x docs](https://laravel.com/api/6.x/index.html)
 - [Source](https://quickadminpanel.com/blog/list-of-21-artisan-make-commands-with-parameters/)
+- [Laravel in Docker for api development](Laravel-api.md)

@@ -26,6 +26,10 @@ docker image tag bradtraversy/nginx bradtraversy/nginx:testing
 docker pull mysql
 # Inspect and see image
 docker image inspect mysql
+# Visualise docker image history
+docker history image_name
+# Search for an image on Dockerhub
+docker search mysql
 ```
 
 ## Docker Networks
@@ -65,8 +69,14 @@ docker container stop $(docker container ls -aq)
 docker container rm $(docker container ls -aq)
 # Stop and remove all containers:
 docker stop $(docker container ls -aq) && docker rm $(docker container ls -aq)
+# Stop and remove all containers (shorthand):
+docker rm -f [container_name]
 #Remove all caches images:
 docker rmi $(docker images -a -q)
+# Get interactive shell on specified container
+docker exec -it [container_name or container_ID] bash
+# Rename container
+docker rename old_name new_name
 ```
 
 ## Docker compose
@@ -78,10 +88,3 @@ docker-compose up -d
 # down
 docker-compose down
 ```
-
-## Advantages of conternerized applications for developers:
-
-- **Accelerate Developer Onboarding** A new hired dev can get an entire environment up and running very quickly. With the use of things like docker-compose, etc...
-- **Eliminate App Conflicts** We can run multiple version of the same app very easily.
-- **Environment Consistency** Developers can replicate the production environment on there own machines.
-- **Ship Software Faster**
