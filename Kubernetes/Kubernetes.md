@@ -1,17 +1,46 @@
 ## Kubernetes
 
 Kubernetes (k8s) is an open-source system for automating deployments, scaling and management of conternerized applications. (kubernetes.io). It is the conductor of a container orchestra.
+## Table of contents :
+
+<details>
+  <summary>Click to expand!</summary>
+
+- [Kubernetes Objects](#Kubernetes-Objects)
+- [More about Kubernetes Objects](#More-about-Kubernetes-Objects)
+- [Some key features of k8s](#Some-key-features-of-k8s)
+- [Advantages of kubernetes](#Advantages-of-kubernetes)
+- [Key Kubernetes Benefits](#Key-Kubernetes-Benefits)
+- [Developer Use Cases](#Developer-Use-Cases)
+- A numbered
+</details>
+
 
 ## Kubernetes Objects:
+- **POD** The POD is the smallest object in K8s. It consists of 1 or more containers.
+- **Services** You can label your PODs and create a Service in K8s that will work as an internal load balancer between your PODs. Instead of pointing to the POD directly, you point to the service.
+- **Replication Controllers** Now that we have our PODs behind a Service, it’s time for us to handle scaling PODs. We will use Replication Controllers for that.
+- **Deployments** Another way of handling scaling PODs is via the Deployment Object. This is a special kind of object. Using this type of replication, you also have rolling updates of the POD container versions out-of-the-box. This is what we will use for our own application below.
+Every time the application code changes, a new version of your application container will be built, and then we are going to update our Deployment manifest with the new version and tell K8s to apply the changes.
+- **StatefulSets** StatefulSet is the workload API object used to manage stateful applications.
+Manages the deployment and scaling of a set of Pods, and provides guarantees about the ordering and uniqueness of these Pods.
+Like a Deployment, a StatefulSet manages Pods that are based on an identical container spec. Unlike a Deployment, a StatefulSet maintains a sticky identity for each of their Pods. These pods are created from the same spec, but are not interchangeable: each has a persistent identifier that it maintains across any rescheduling.
+- **Volumes** On-disk files in a Container are ephemeral, which presents some problems for non-trivial applications when running in Containers. First, when a Container crashes, kubelet will restart it, but the files will be lost - the Container starts with a clean state. Second, when running Containers together in a Pod it is often necessary to share files between those Containers. The Kubernetes Volume abstraction solves both of these problems.
+- **PersistentVolume** A PersistentVolume (PV) is a piece of storage in the cluster that has been provisioned by an administrator or dynamically provisioned using Storage Classes. It is a resource in the cluster just like a node is a cluster resource. PVs are volume plugins like Volumes, but have a lifecycle independent of any individual Pod that uses the PV. This API object captures the details of the implementation of the storage, be that NFS, iSCSI, or a cloud-provider-specific storage system.
+- **PersistentVolumeClaim** A PersistentVolumeClaim (PVC) is a request for storage by a user. It is similar to a Pod. Pods consume node resources and PVCs consume PV resources. Pods can request specific levels of resources (CPU and Memory). Claims can request specific size and access modes (e.g., they can be mounted once read/write or many times read-only).
+While PersistentVolumeClaims allow a user to consume abstract storage resources, it is common that users need PersistentVolumes with varying properties, such as performance, for different problems. Cluster administrators need to be able to offer a variety of PersistentVolumes that differ in more ways than just size and access modes, without exposing users to the details of how those volumes are implemented. For these needs, there is the StorageClass resource
+
+## More about Kubernetes Objects:
+- [Operators](Operators.md)
 - [Pods](Pods.md)
-- Deployments
-- Namespaces
-- ReplicationController (Manages Pods)
-- StatefulSets
-- DaemonSets
-- Services
-- ConfigMaps
-- Volumes
+- [Deployments](Deployments.md)
+- [Namespaces](Namespaces.md)
+- [ReplicationController](ReplicationController.md)
+- [StatefulSets](StatefulSets.md)
+- [DaemonSets](DaemonSets.md)
+- [Services](Services.md)
+- [ConfigMaps](ConfigMaps.md)
+- [Volumes](Volumes.md)
 
 ## Some key features of k8s:
 
@@ -48,20 +77,6 @@ Kubernetes (k8s) is an open-source system for automating deployments, scaling an
 - **Workload scenarios (CI/CD and more)** We can use k8s for the build servers
 - **Learn how to leverage deployment options** Canary test, AB or blue-green testing
 - **Help DevOps resource and solve problems**
-
-## Kubernetes Objects
-- **POD** The POD is the smallest object in K8s. It consists of 1 or more containers.
-- **Services** You can label your PODs and create a Service in K8s that will work as an internal load balancer between your PODs. Instead of pointing to the POD directly, you point to the service.
-- **Replication Controllers** Now that we have our PODs behind a Service, it’s time for us to handle scaling PODs. We will use Replication Controllers for that.
-- **Deployments** Another way of handling scaling PODs is via the Deployment Object. This is a special kind of object. Using this type of replication, you also have rolling updates of the POD container versions out-of-the-box. This is what we will use for our own application below.
-Every time the application code changes, a new version of your application container will be built, and then we are going to update our Deployment manifest with the new version and tell K8s to apply the changes.
-- **StatefulSets** StatefulSet is the workload API object used to manage stateful applications.
-Manages the deployment and scaling of a set of Pods, and provides guarantees about the ordering and uniqueness of these Pods.
-Like a Deployment, a StatefulSet manages Pods that are based on an identical container spec. Unlike a Deployment, a StatefulSet maintains a sticky identity for each of their Pods. These pods are created from the same spec, but are not interchangeable: each has a persistent identifier that it maintains across any rescheduling.
-- **Volumes** On-disk files in a Container are ephemeral, which presents some problems for non-trivial applications when running in Containers. First, when a Container crashes, kubelet will restart it, but the files will be lost - the Container starts with a clean state. Second, when running Containers together in a Pod it is often necessary to share files between those Containers. The Kubernetes Volume abstraction solves both of these problems.
-- **PersistentVolume** A PersistentVolume (PV) is a piece of storage in the cluster that has been provisioned by an administrator or dynamically provisioned using Storage Classes. It is a resource in the cluster just like a node is a cluster resource. PVs are volume plugins like Volumes, but have a lifecycle independent of any individual Pod that uses the PV. This API object captures the details of the implementation of the storage, be that NFS, iSCSI, or a cloud-provider-specific storage system.
-- **PersistentVolumeClaim** A PersistentVolumeClaim (PVC) is a request for storage by a user. It is similar to a Pod. Pods consume node resources and PVCs consume PV resources. Pods can request specific levels of resources (CPU and Memory). Claims can request specific size and access modes (e.g., they can be mounted once read/write or many times read-only).
-While PersistentVolumeClaims allow a user to consume abstract storage resources, it is common that users need PersistentVolumes with varying properties, such as performance, for different problems. Cluster administrators need to be able to offer a variety of PersistentVolumes that differ in more ways than just size and access modes, without exposing users to the details of how those volumes are implemented. For these needs, there is the StorageClass resource
 
 ## Some Kubectl commands
 ```bash
