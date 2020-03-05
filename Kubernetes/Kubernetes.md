@@ -12,7 +12,10 @@ Kubernetes (k8s) is an open-source system for automating deployments, scaling an
 - [Advantages of kubernetes](#Advantages-of-kubernetes)
 - [Key Kubernetes Benefits](#Key-Kubernetes-Benefits)
 - [Developer Use Cases](#Developer-Use-Cases)
-- A numbered
+- [Some Kubectl commands](#Some-Kubectl-commands)
+- [WEB UI Dashboard](#WEB-UI-Dashboard)
+- [Ecosystem toolset](#Ecosystem-toolset)
+- [Quick links](#Quick-links)
 </details>
 
 
@@ -112,7 +115,10 @@ kubectl patch
 ```
 3. Visit the ddashboard URL and login using the token
 
-## Quick Links
+## Ecosystem toolsets
+- [**Prometheus**](https://prometheus.io/docs/introduction/overview/) is an open-source systems monitoring and alerting toolkit originally built at SoundCloud. Prometheus joined the Cloud Native Computing Foundation in 2016 as the second hosted project, after Kubernetes.
+## Quick links
+
 [Minikube](https://github.com/kubernetes/minikube)
 [Docker Desktop](https://www.docker.com/products/docker-desktop)
 [Kubernetes in Docker (Kind)](https://kind.sigs.k8s.io)
