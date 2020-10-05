@@ -1,18 +1,23 @@
 # AWS Certified Cloud Practitioner
-[//]: # (Current timestamp 10:00)
 
-Table of Contents
-1. Introduction
-  1.1 [Who is the Certified Cloud Pratictitioner for ?](Who-is-the-Certified-Cloud-Pratictitioner-for-?)
-  1.2 [What value does CCP hold ?](What-value-does-CCP-hold-?)
-  1.3 [What does this exam validates ?](What-does-this-exam-validates-?)
-  1.4 [What value does CCP hold ?](What-value-does-CCP-hold-?)
-  1.5 [Why get the CCP ?](Why-get-the-CCP-?)
-  1.6 [How long to study to pass CCP ?](How-long-to-study-to-pass-CCP-?)
-  1.7 [Where to take the test ?](Where-to-take-the-test-?)
-  1.8 [How much ? how long ? and other questions..](How-much-?-how-long-?-and-other-questions..)
-  1.9 [Exam Guide - Content Outline](Exam-Guide---Content-Outline)
-  1.10 [Exam response type](Exam-response-type)
+This document is intended to help preparing for the AWS Cloud Practitioner Certification
+
+## Table of contents
+- [AWS Certified Cloud Practitioner](#aws-certified-cloud-practitioner)
+  * [Contents](#contents)
+  * [Who is the Certified Cloud Pratictitioner for ?](#who-is-the-certified-cloud-pratictitioner-for--)
+  * [What does this exam validates ?](#what-does-this-exam-validates--)
+    + [What value does CCP hold ?](#what-value-does-ccp-hold--)
+  * [Why get the CCP ?](#why-get-the-ccp--)
+  * [How long to study to pass CCP ?](#how-long-to-study-to-pass-ccp--)
+  * [Where to take the test ?](#where-to-take-the-test--)
+  * [How much ? how long ? and other questions..](#how-much---how-long---and-other-questions)
+  * [Exam Guide - Content Outline](#exam-guide---content-outline)
+      - [Domain 1: Cloud Concepts](#domain-1--cloud-concepts)
+      - [Domain 2: Security and Compliance](#domain-2--security-and-compliance)
+      - [Domain 3: Technology](#domain-3--technology)
+      - [Domain 4: Billing and Pricing](#domain-4--billing-and-pricing)
+  * [Exam response type](#exam-response-type)
 
 ## Who is the Certified Cloud Pratictitioner for ?
 - Learning AWS foundational knowledge
