@@ -3,6 +3,9 @@
 This document is intended to help preparing for the AWS Cloud Practitioner Certification
 
 ## Table of contents
+<details>
+  <summary>Introduction</summary>
+
 - [Who is the Certified Cloud Pratictitioner for](#who-is-the-certified-cloud-pratictitioner-for)
 - [What does this exam validates](#what-does-this-exam-validates)
   * [What value does CCP hold](#what-value-does-ccp-hold)
@@ -16,6 +19,8 @@ This document is intended to help preparing for the AWS Cloud Practitioner Certi
     + [Domain 3: Technology](#domain-3--technology)
     + [Domain 4: Billing and Pricing](#domain-4--billing-and-pricing)
 - [Exam response type](#exam-response-type)
+</details>
+
 
 ## Who is the Certified Cloud Pratictitioner for
 - Learning AWS foundational knowledge
