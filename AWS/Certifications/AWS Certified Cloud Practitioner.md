@@ -28,7 +28,7 @@ This document is intended to help preparing for the AWS Cloud Practitioner Certi
   - [Six Advantages and Benefits of Cloud Computing](#six-advantages-and-benefits-of-cloud-computing)
   - [Types of Cloud Computing](#types-of-cloud-computing)
   - [Cloud Computing Deployment Models](#cloud-computing-deployment-models)
-</details
+</details>
 
 
 <details>
