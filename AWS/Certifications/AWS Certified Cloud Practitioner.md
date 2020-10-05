@@ -6,21 +6,40 @@ This document is intended to help preparing for the AWS Cloud Practitioner Certi
 <details>
   <summary>Introduction</summary>
 
-- [Who is the Certified Cloud Pratictitioner for](#who-is-the-certified-cloud-pratictitioner-for)
-- [What does this exam validates](#what-does-this-exam-validates)
-  * [What value does CCP hold](#what-value-does-ccp-hold)
-- [Why get the CCP](#why-get-the-ccp)
-- [How long to study to pass CCP](#how-long-to-study-to-pass-ccp)
-- [Where to take the test](#where-to-take-the-test)
-- [How much how long and other questions..](#how-much-how-long-and-other-questions)
-- [Exam Guide - Content Outline](#exam-guide---content-outline)
-    + [Domain 1: Cloud Concepts](#domain-1--cloud-concepts)
-    + [Domain 2: Security and Compliance](#domain-2--security-and-compliance)
-    + [Domain 3: Technology](#domain-3--technology)
-    + [Domain 4: Billing and Pricing](#domain-4--billing-and-pricing)
-- [Exam response type](#exam-response-type)
+  - [Who is the Certified Cloud Pratictitioner for](#who-is-the-certified-cloud-pratictitioner-for)
+  - [What does this exam validates](#what-does-this-exam-validates)
+    * [What value does CCP hold](#what-value-does-ccp-hold)
+  - [Why get the CCP](#why-get-the-ccp)
+  - [How long to study to pass CCP](#how-long-to-study-to-pass-ccp)
+  - [Where to take the test](#where-to-take-the-test)
+  - [How much how long and other questions..](#how-much-how-long-and-other-questions)
+  - [Exam Guide - Content Outline](#exam-guide---content-outline)
+      + [Domain 1: Cloud Concepts](#domain-1--cloud-concepts)
+      + [Domain 2: Security and Compliance](#domain-2--security-and-compliance)
+      + [Domain 3: Technology](#domain-3--technology)
+      + [Domain 4: Billing and Pricing](#domain-4--billing-and-pricing)
+  - [Exam response type](#exam-response-type)
 </details>
 
+<details>
+  <summary>Cloud Concepts</summary>
+
+  - [What is Cloud Computing](#what-is-cloud-computing)
+  - [Six Advantages and Benefits of Cloud Computing](#six-advantages-and-benefits-of-cloud-computing)
+  - [Types of Cloud Computing](#types-of-cloud-computing)
+  - [Cloud Computing Deployment Models](#cloud-computing-deployment-models)
+</details
+
+
+<details>
+  <summary>AWS Global Infrastructure</summary>
+
+  - [Introduction and Map Overview](#introduction-and-map-overview)
+  - [Regions](#regions)
+  - [Availability Zones](#availability-zones)
+  - [Edge Locations](#edge-locations)
+  - [GovCloud Regions](#govcloud-regions)
+</details
 
 ## Who is the Certified Cloud Pratictitioner for
 - Learning AWS foundational knowledge
@@ -99,3 +118,21 @@ You can find the exam guide [here](https://d1.awsstatic.com/training-and-certifi
 ## Exam response type
 - Multiple choice. (1 out of 4)
 - Multiple response. (2 out of 5 or more options)
+
+## What is Cloud Computing
+
+## Six Advantages and Benefits of Cloud Computing
+
+## Types of Cloud Computing
+
+## Cloud Computing Deployment Models
+
+## Introduction and Map Overview
+
+## Regions
+
+## Availability Zones
+
+## Edge Locations
+
+## GovCloud Regions
