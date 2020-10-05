@@ -120,8 +120,34 @@ You can find the exam guide [here](https://d1.awsstatic.com/training-and-certifi
 - Multiple response. (2 out of 5 or more options)
 
 ## What is Cloud Computing
+Cloud computing is the pratice of using a network of remote servers hosted on the internet to store manage, and process data, rather than a local server or a personal computer.
 
 ## Six Advantages and Benefits of Cloud Computing
+1. **Trade capital expense for variable expense** :
+
+   **No upfront-cost** Instead of paying for data centers and servers
+   **Pay On-Demand** Pay only when you consume computing resources
+
+2. **Benefit from massive economies of scale** :
+
+   Usage from hundreds of thousands of customers aggregated in the cloud. Your are **sharing the cost with other customers** to get unbeatable savings.
+
+3. **Stop guessing capacity** :
+
+   Eliminate guesswork about infrastructure capacity needs, **Instead of paying for idle or underutilized servers**, you can scale up or scale down to meet the current need.
+
+4. **Increase speed and agility** :
+
+   Launch resources **within a few click in minutes** instead of waiting days or weeks of your IT to implement the solution on-promise.
+
+5. **Stop spending money on running and maintaining data centers** :
+
+   **Focus on your own customers**, rahter than on the heavy lifting of racking, staking, and powering servers.
+
+6. **Go global in minutes** :
+
+   Deploy you app in minutes in **multiple regions around the world with a few clicks**.
+   Provide lower latency and a better experience for your customers at minimal cost.
 
 ## Types of Cloud Computing
 
