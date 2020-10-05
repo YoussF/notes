@@ -39,7 +39,7 @@ This document is intended to help preparing for the AWS Cloud Practitioner Certi
   - [Availability Zones](#availability-zones)
   - [Edge Locations](#edge-locations)
   - [GovCloud Regions](#govcloud-regions)
-</details
+</details>
 
 ## Who is the Certified Cloud Pratictitioner for
 - Learning AWS foundational knowledge
