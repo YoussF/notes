@@ -1,3 +1,7 @@
+<p align="center">
+   <img src="assets/mirstation.png" alt="MirStation" width="197"/>
+</p>
+
 # AWS Certified Cloud Practitioner
 
 This document is intended to help preparing for the AWS Cloud Practitioner Certification
