@@ -208,7 +208,7 @@ Cloud computing is the pratice of using a network of remote servers hosted on th
 
 ## Introduction and Map Overview
 <p align="center">
-   <img src="assets/aws_regions-1.png" width="600">
+   <img src="assets/aws_regions-1.png" width="100%">
 </p>
 
 AWS now spans **77 Availability Zones** within **24 geographic regions** around the world, and has announced plans for nine more Availability Zones and three more AWS Regions in Indonesia, Japan, and Spain.
