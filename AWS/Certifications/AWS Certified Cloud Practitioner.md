@@ -45,6 +45,8 @@ This document is intended to help preparing for the AWS Cloud Practitioner Certi
   - [GovCloud Regions](#govcloud-regions)
 </details>
 
+# Introduction
+
 ## Who is the Certified Cloud Pratictitioner for
 - Learning AWS foundational knowledge
 - Shows you've poked around and can use the AWS console.
@@ -123,6 +125,8 @@ You can find the exam guide [here](https://d1.awsstatic.com/training-and-certifi
 - Multiple choice. (1 out of 4)
 - Multiple response. (2 out of 5 or more options)
 
+# Cloud Concepts
+
 ## What is Cloud Computing
 Cloud computing is the pratice of using a network of remote servers hosted on the internet to store manage, and process data, rather than a local server or a personal computer.
 
@@ -154,10 +158,33 @@ Cloud computing is the pratice of using a network of remote servers hosted on th
    Provide lower latency and a better experience for your customers at minimal cost.
 
 ## Types of Cloud Computing
+   1. **SaaS** : (For Customers, ex: gmail, office365,...) \
+   Software as a service, a completed product that is run and managed by the service provider
+   2. **PaaS** : (For Developers, ex: AWS Elastic Beanstalk, Heroku, Google App engine,...) \
+   Plateform as a service, removes the need for you organization to manage the underlying infrastructure. Focus on the deployment and management of yoAWS Elastic BeanstalkYou have an app, you push-it and it runs.
+   1. **IaaS** : (For Admins, ex: AWS, Google Cloud Platform, Microsoft Azure,...)
+   Infrastructure as a service, the basic building blocks for you cloud IT, Provides access to networking features, computers and data storage space.
 
 ## Cloud Computing Deployment Models
+   1. **Cloud** : Fully utilizing cloud computing \
+   For Startups, SaaS offerings, New Projects and companies
+   1. **Hybrid** : Using both Cloud and On-Promise \
+   For Banks, FinTech, Investment Management, Large Professional Service providers, Legacy on-promise
+   1. **On-Promise** : Dploying resources on-promises, using virtualization and resource management tools \
+   For Public sectors eg. Government, Super Sensitive eg. Hospitals, large Entreprise with heavy regulation eg. Insurance Compagnies
+
+# AWS Global Infrastructure
 
 ## Introduction and Map Overview
+<p align="center">
+   <img src="assets/aws_regions-1.png" width="600">
+</p>
+
+AWS now spans **77 Availability Zones** within **24 geographic regions** around the world, and has announced plans for nine more Availability Zones and three more AWS Regions in Indonesia, Japan, and Spain.
+
+**Regions** : Physical location inthe world with multiple Availibity Zones \
+**Availibity Zones** : One or more discrete data centers \
+**Edge Location** : Datacenter owned by a trusted partner of AWS\
 
 ## Regions
 
