@@ -19,7 +19,7 @@
 - To be able to schedule your script so that i runs in background every x minutes by using  a cron job
 
 ## The mission
-Being able to surf the web at the speed of light and gather relevent information, as if your life depends on it! Why ? BECAUSE IT DOES ! You see... sometime life can be tough! i mean really tough ! And your ability to operate faster than your competitors i crucial for your success.
+Being able to surf the web at the speed of light and gather relevent information, as if your life depends on it! Why ? BECAUSE IT DOES ! You see... sometime life can be tough! i mean really tough ! And your ability to operate faster than your competitors can be crucial for your success.
 
 In 2014, i started to have huge unsanitary problems in my appartement where i lived with my wife and my two kids. So much so that the organization responsible for ensuring sanitation decided to close the apartment. They told me that I was going to have to leave before the end of the month.
 
