@@ -23,7 +23,7 @@ Being able to surf the web at the speed of light and gather relevent information
 
 In 2014, i started to have huge unsanitary problems in my appartement where i lived with my wife and my two kids. So much so that the organization responsible for ensuring sanitation decided to close the apartment. They told me that I was going to have to leave before the end of the month.
 
-Then i started looking for a new one on immoweb.be, but I was quickly confronted with two major problems :
+Then i started looking for a new one on immoweb.be, but I was quickly confronted to two major problems :
 
 - Immoweb.be does publish any information about the publication date, therefore i had no way to know for how long a particular appartement has been on the plateform.
 - Every time I found an interesting apartment, I contacted the owner, but it was too late, he had already rented it.
