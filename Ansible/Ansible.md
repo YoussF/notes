@@ -5,6 +5,21 @@ ansible-playbook myplaybook.yml
 # Overwrite the default hosts option in the playbook and limit execution to a certain group or host
 ansible-playbook -l server1 myplaybook.yml
 ```
+## Ansible oneline modules
+```bash
+# command module
+ansible -i "rpi303," all -u vagrant -m command -a uptime
+# shell module
+ansible -i "rpi303," all -u vagrant -m shell -a "ps aux | grep vagrant | wc -l" --one-line
+# raw module (no python)
+ansible -i "rpi303," all -u vagrant -b -K -m raw -a "apt install -y git"
+# apt module
+ansible -i "rpi303," all -b -m apt -a 'name=nginx state=latest'
+# service module
+ansible -i "rpi303," all -b -m service -a 'name=nginx state=stopped'
+# setup module
+ansible -i "rpi303," all -m setup -a "filter=ansible_distribution*"
+```
 
 ## Ansible Getting Information about a Play
 ```bash
