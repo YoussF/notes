@@ -1,11 +1,232 @@
-## Ansible Running Playbook
+<!--
+Source: https://app.pluralsight.com/library/courses/ansible-fundamentals/table-of-contents)
+-->
+
+<h1>Ansible</h1>
+
+Ansible is an open-source software provisioning, configuration management, and application-deployment tool enabling infrastructure as code. It runs on many Unix-like systems, and can configure both Unix-like systems as well as Microsoft Windows. It includes its own declarative language to describe system configuration. Ansible was written by Michael DeHaan and acquired by Red Hat in 2015. Ansible is agentless, temporarily connecting remotely via SSH or Windows Remote Management (allowing remote PowerShell execution) to do its tasks.
+
+<h3>Table of contents :</h3>
+
+<details>
+  <summary>Click to view</summary>
+
+* [Managing the inventory](#managing-the-inventory)
+  * [Introduction](#introduction)
+  * [Specifying Managed Hosts with a Static Inventory](#specifying-managed-hosts-with-a-static-inventory)
+  * [Inventory Location](#inventory-location)
+  * [Creating an INI-Formatted Inventory File](#creating-an-ini-formatted-inventory-file)
+  * [Special Groups and Group Names](#special-groups-and-group-names)
+  * [Defining Nested Groups](#defining-nested-groups)
+  * [Simplifying Host Specifications with Ranges](#simplifying-host-specifications-with-ranges)
+  * [Alternative Inventory File Format: YAML](#alternative-inventory-file-format-yaml)
+  * [Verifying the Inventory](#verifying-the-inventory)
+</details>
+<br/><br/>
+
+# Managing the inventory
+
+## Introduction
+* An inventory defines a collection of hosts managed by Ansible.
+* Hosts can be assigned to groups.
+* Groups can be managed collectively.
+* Groups can contain child groups.
+* Hosts can be members of multiple groups.
+* Variables can be set that apply to hosts and groups.
+<br />
+
+## Specifying Managed Hosts with a Static Inventory
+* One way to define an Ansible inventory is as a text file.
+* It can be written in a number of formats -- most commonly in an INI-style or in YAML.
+* This is called a static inventory, because the inventory needs to be manually updated.
+* It is possible to create a dynamic inventory that is automatically generated and updated, but we will cover that later in this course.
+<br />
+
+## Inventory Location
+* The location of the inventory is controlled by your current Ansible configuration file
+  * **ansible --version** will show you which configuration file is in use
+* That file specifies the location of the inventory in its [defaults] section:
+  ```ini
+  [default]
+  inventory = ./inventory
+  ```
+* If not set by the configuration, **/etc/ansible/hosts** is used
+<br />
+
+## Creating an INI-Formatted Inventory File
+* In its simplest form, an INI-formatted inventory file is a list of host names or IP addresses:
+  ```ini
+  web1.example.com
+  web2.example.com
+  db1.example.com
+  db2.example.com
+  192.0.2.42
+  ```
+* Host groups allow you to collectively automate a set of systems.
+* In the following example, there are two groups, webservers and db_servers
+  ```ini
+  [webservers]
+  web1.example.com
+  web2.example.com
+  192.168.2.42
+
+  [db_servers]
+  db1.example.com
+  db2.example.com
+  ```
+* A host can be a member of multiple groups
+* This allows you to organize groups in different ways depending on how you want to manage them:
+  * Web servers or database servers
+  * Servers in production or testing
+  * Servers in the East data center or the West data center
+    ```ini
+    [webserver]
+    web1.example.com
+    web2.example.com
+    102.168.2.42
+
+    [db_servers]
+    db1.example.com
+    db2.example.com
+
+    [east_datacenter]
+    web1.example.com
+    db1.example.com
+
+    [west_datacenter]
+    web2.example.com
+    db2.example.com
+
+    [production]
+    web1.example.com
+    web2.example.com
+    db1.example.com
+    db2.example.com
+
+    [development]
+    192.168.2.42
+    ```
+<br />
+
+## Special Groups and Group Names
+* Two host groups always exist:
+  * **all** includes every host in the inventory
+  * **ungrouped** includes every host in **all** that is not a member of another group
+* Group names should not include dashes, but underscores are fine
+* Avoid confusion: do not give a group the same name as a host!
+<br />
+
+## Defining Nested Groups
+* Ansible host inventories can include groups of host groups.
+* In an INI-formatted inventory, you can add nested host groups with the :children suffix.
+* In this example, canada and usa are nested groups inside the group north_america
+  ```ini
+  [usa]
+  washington01.example.com
+  washington02.example.com
+
+  [canada]
+  antario01.example.com
+  antario02.example.com
+
+  [north_america:children]
+  canada
+  usa
+  ```
+<br />
+
+## Simplifying Host Specifications with Ranges
+* It is possible to specify ranges in the host names or IP addresses.
+* Both numeric and alphabetic ranges can be specified.
+* Ranges match all values from [START:END].
+* Groups can contain child groups.
+* For example:
+  * **192.168.[4:7].[0:255]** matches all IPv4 addresses in the 192.168.4.0/22 network (**192.168.4.0
+through 192.168.7.255**).
+  * **server[01:20].example.com** matches all hosts named **server01.example.com through
+server20.example.com**.
+  * **[a:c].dns.example.com** matches hosts named **a.dns.example.com, b.dns.example.com, and
+c.dns.example.com**.
+* If leading zeros are included, they are used in the pattern.
+  ```ini
+  [usa]
+  washington[1:2].example.com
+  antario[01:02].example.com
+  ```
+* In this example, **ontario01.example.com** is a match but **ontario1.example.com** is not.
+<br />
+
+## Alternative Inventory File Format: YAML
+* Inventory files can also be expressed in YAML format.
+* A comparison of an INI-formatted inventory with an identical YAML-formatted inventory:
+  * INI :
+    ```ini
+    [usa]
+    washington1.example.com
+    washington2.example.com
+    [canada]
+    ontario01.example.com
+    ontario02.example.com
+    [north_america:children]
+    canada
+    usa
+    ```
+  * YAML :
+    ```yaml
+    all:
+      children:
+        north_america:
+          children:
+            canada:
+              hosts:
+                ontario01.example.com: {}
+                ontario02.example.com: {}
+            usa:
+              hosts:
+                washington1.example.com: {}
+                washington2.example.com: {}
+    ```
+<br />
+
+## Verifying the Inventory
+* You can use the ansible-inventory command to verify the inventory
+* The -i option can be used to check any file rather than the current inventory
+* The following command will display the current inventory in YAML format:
+  ```bash
+  ansible-inventory -y --list
+  ```
+* The ansible command can also verify a machine’s presence in the inventory.
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+# Ansible running playbook
 ```bash
 # Run a playbook and execute all the tasks defined within it
 ansible-playbook myplaybook.yml
 # Overwrite the default hosts option in the playbook and limit execution to a certain group or host
 ansible-playbook -l server1 myplaybook.yml
 ```
-## Ansible oneline modules
+# Ansible oneline modules
 ```bash
 # command module
 ansible -i "rpi303," all -u vagrant -m command -a uptime
@@ -20,8 +241,7 @@ ansible -i "rpi303," all -b -m service -a 'name=nginx state=stopped'
 # setup module
 ansible -i "rpi303," all -m setup -a "filter=ansible_distribution*"
 ```
-
-## Ansible config
+# Ansible config
 ```bash
 # Show ansible config file location
 ansible --version
@@ -35,7 +255,7 @@ become = true
 become_user = root
 become_ask_pass = false
 ```
-### Host-Based Connection Variables
+## Host-Based Connection Variables
 ```bash
 project
 ├── ansible.cfg
@@ -45,7 +265,7 @@ project
 └── inventory
 # They also have slightly different syntax and naming
 ```
-### Host-Based Connection and Privilege Escalation Variables
+## Host-Based Connection and Privilege Escalation Variables
 - **ansible_host**: specifies a different IP address or hostname to use for the connection for this host 
 instead of the one in the inventory
 - **ansible_port**: specifies the port to use for the SSH connection on this host
@@ -53,7 +273,7 @@ instead of the one in the inventory
 - **ansible_become**: specifies whether to use privilege escalation for this host
 - **ansible_become_user**: specifies the user to become on this host
 - **ansible_become_method**: specifies the privilege escalation method to use for this host 
-### Preparation on the Managed Host
+## Preparation on the Managed Host
 - One of the more common choices is to set up SSH key-based authentication to an unprivileged 
 account that can use sudo to become root without a password
 - The advantage of this is that you can use a specific account that only Ansible uses, and tie that to a 
@@ -61,22 +281,12 @@ particular SSH private key, but still have "passwordless" authentication
 - Alternatively: SSH key-based authentication to the unprivileged account, then require the sudo
 password for authentication to root
 - Ansible allows you to select the mix of settings that works best for your security policy and stance
-
-## Ansible inventory
-```bash
-# Verifiying inventory
-ansible-inventory -y --list
-# List all host in currnet inventory
-ansible all --list-hosts
-```
-
-## Ansible Commands
+# Ansible commands
 - Ad hoc commands are simple, one line operations that are run without writing a playbook.
 - They are useful for quick tests and changes.
 - For example, to start a service or ensure a line exists in a file.
 - Ad hoc commands have limitations.
-
-## Ansible Modules
+# Ansible modules
 - Ansible provides modules, code that can be used to automate particular tasks
 - Some uses of modules:
   - Ensure users exist with certain settings
@@ -91,8 +301,7 @@ Idempotent modules can be run safely multiple times.
 # Getting documentation about module
 ansible-doc ping
 ```
-
-## Ansible Ad Hoc Commands
+# Ansible ad hoc commands
 ```bash
 ansible host-pattern -m module [-a 'module arguments'] [-i inventory]
 ```
@@ -114,7 +323,7 @@ rpi301 | SUCCESS => {
     "ping": "pong"
 }
 ```
-### Overriding Default Configuration Settings
+## Overriding Default Configuration Settings
 - To override a default configuration setting there are several different options. 
 - These options override the configuration in the **ansible.cfg** configuration file.
   - **-k** or **--ask-pass** will prompt for the connection password.
@@ -123,7 +332,7 @@ rpi301 | SUCCESS => {
   - **-K** or **--ask-become-pass** will prompt for the privilege escalation password.
   - **--become-method** will override the default privilege escalation method. 
 The default is **sudo**. Find valid choices using **ansible-doc -t become -l**
-## Ansible playbooks
+# Ansible playbooks
 - An Ansible Playbook is the main way to automate tasks in Ansible.
 - A playbook is a YAML-based text file containing a list of one or more plays to run in a specific order.
 - A play is an ordered list of tasks run against specific hosts within an inventory.
@@ -131,7 +340,7 @@ The default is **sudo**. Find valid choices using **ansible-doc -t become -l**
 - Most tasks are idempotent and can be safely run a second time without problems.
 - Playbooks can change lengthy, complex manual administrative tasks into an easily repeatable routine
 with predictable and successful outcomes.
-### Playbook formatting
+## Playbook formatting
 - A playbook is saved using the standard file extension .yml.
 - Indentation with space character indicates the structure of the data in the file.
 - Two‑space indentation with the space character only is the main concept behind the syntax within YAML files. Note that the spaces cannot be substituted with the tab character. The tab character is not allowed in proper YAML. YAML doesn't place strict requirements on how many spaces are used for the indentation.
@@ -144,7 +353,7 @@ same indentation.
 ```bash
 
 ```
-## Ansible Getting Information about a Play
+# Ansible getting information about a playbook
 ```bash
 # List all tasks that would be executed by a play without making any changes to the remote servers
 ansible-playbook myplaybook.yml --list-tasks
@@ -153,8 +362,7 @@ ansible-playbook myplaybook.yml --list-hosts
 # List all tags available in a play
 ansible-playbook myplaybook.yml --list-tags
 ```
-
-## Ansible Controlling Playbook Execution
+# Ansible controlling playbook execution
 ```bash
 # Skip anything that comes before the specified task, executing the remaining of the play from that point on
 ansible-playbook myplaybook.yml --start-at-task="Set Up Nginx"
@@ -163,8 +371,7 @@ ansible-playbook myplaybook.yml --tags=mysql,nginx
 # Skip all tasks that are under specific tags
 ansible-playbook myplaybook.yml --skip-tags=mysql
 ```
-
-## Ansible Vault to Store Sensitive Data
+# Ansible Vault to store sensitive datas
 ```bash
 # Creating a New Encrypted File
 ansible-vault create credentials.yml
@@ -185,17 +392,17 @@ ansible-vault edit credentials_dev.yml --vault-id dev@prompt
 # Decrypting Encrypted Files
 ansible-vault decrypt credentials.yml
 ```
-
-## Debugging
+# Debugging
 ```bash
 # Output verbosity
 ansible-playbook myplaybook.yml -v
 # Output more verbosity
 ansible-playbook myplaybook.yml -vvvv
 ```
-
-## Ansible Documentation
+# Ansible documentation
 ```bash
 # List all ansible aws module documentations
 ansible-doc -l | grep aws
 ```
+
+-->
