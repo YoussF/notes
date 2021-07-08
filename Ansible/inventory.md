@@ -31,13 +31,13 @@ Source: https://app.pluralsight.com/library/courses/ansible-fundamentals/table-o
   * [2.12 Preparation on the Managed Host](#212-preparation-on-the-managed-host)
 <br/><br/>
 
-## 1. Creating a Static Inventory of Managed Hosts
+# 1. Creating a Static Inventory of Managed Hosts
 Objectives
 * Implement and use Ansible inventory and host files.
 * Explain the format of inventory files.
 * Create an inventory file that defines a list of Linux-based managed hosts, defines groups, and assigns managed hosts to those groups.
 
-### 1.1 Introduction
+## 1.1 Introduction
 * An inventory defines a collection of hosts managed by Ansible.
 * Hosts can be assigned to groups.
 * Groups can be managed collectively.
@@ -46,14 +46,14 @@ Objectives
 * Variables can be set that apply to hosts and groups.
 <br />
 
-### 1.2 Specifying Managed Hosts with a Static Inventory
+## 1.2 Specifying Managed Hosts with a Static Inventory
 * One way to define an Ansible inventory is as a text file.
 * It can be written in a number of formats -- most commonly in an INI-style or in YAML.
 * This is called a static inventory, because the inventory needs to be manually updated.
 * It is possible to create a dynamic inventory that is automatically generated and updated, but we will cover that later in this course.
 <br />
 
-### 1.3 Inventory Location
+## 1.3 Inventory Location
 * The location of the inventory is controlled by your current Ansible configuration file
   * **ansible --version** will show you which configuration file is in use
 * That file specifies the location of the inventory in its [defaults] section:
@@ -64,7 +64,7 @@ Objectives
 * If not set by the configuration, **/etc/ansible/hosts** is used
 <br />
 
-### 1.4 Creating an INI-Formatted Inventory File
+## 1.4 Creating an INI-Formatted Inventory File
 * In its simplest form, an INI-formatted inventory file is a list of host names or IP addresses:
   ```ini
   web1.example.com
@@ -119,7 +119,7 @@ Objectives
     ```
 <br />
 
-### 1.5 Special Groups and Group Names
+## 1.5 Special Groups and Group Names
 * Two host groups always exist:
   * **all** includes every host in the inventory
   * **ungrouped** includes every host in **all** that is not a member of another group
@@ -127,7 +127,7 @@ Objectives
 * Avoid confusion: do not give a group the same name as a host!
 <br />
 
-### 1.6 Defining Nested Groups
+## 1.6 Defining Nested Groups
 * Ansible host inventories can include groups of host groups.
 * In an INI-formatted inventory, you can add nested host groups with the :children suffix.
 * In this example, canada and usa are nested groups inside the group north_america
@@ -146,7 +146,7 @@ Objectives
   ```
 <br />
 
-### 1.7 Simplifying Host Specifications with Ranges
+## 1.7 Simplifying Host Specifications with Ranges
 * It is possible to specify ranges in the host names or IP addresses.
 * Both numeric and alphabetic ranges can be specified.
 * Ranges match all values from [START:END].
@@ -167,7 +167,7 @@ c.dns.example.com**.
 * In this example, **ontario01.example.com** is a match but **ontario1.example.com** is not.
 <br />
 
-### 1.8 Alternative Inventory File Format: YAML
+## 1.8 Alternative Inventory File Format: YAML
 * Inventory files can also be expressed in YAML format.
 * A comparison of an INI-formatted inventory with an identical YAML-formatted inventory:
   * INI :
@@ -199,7 +199,7 @@ c.dns.example.com**.
     ```
 <br />
 
-### 1.9 Verifying the Inventory
+## 1.9 Verifying the Inventory
 * You can use the ansible-inventory command to verify the inventory
 * The -i option can be used to check any file rather than the current inventory
 * The following command will display the current inventory in YAML format:
@@ -217,13 +217,13 @@ c.dns.example.com**.
  ```
 *  If an inventory contains a host and a host group with the same name, the ansible command prints a warning and targets the host. The host group is ignored.
 
-## 2. Managing Connection Settings and Privilege Escalation
+# 2. Managing Connection Settings and Privilege Escalation
 Objectives
 * Configure connections used for communicating with managed hosts.
 * Use privilege escalation for playbook and play escalation.
 * Explain how Ansible selects the configuration file to use and how it is applied.
 
-### 2.1 Ansible’s Agentless Architecture
+## 2.1 Ansible’s Agentless Architecture
 * Ansible does not require you to install a custom agent on managed hosts
 * Protocols and software included with the operating system are leveraged
   * SSH and Python used on Linux systems
@@ -232,7 +232,7 @@ Objectives
   * Simpler to prepare systems
   * Reduces security risks
 
-### 2.2 Controlling Connections to Managed Hosts
+## 2.2 Controlling Connections to Managed Hosts
 Ansible on the control node needs some information to successfully connect to managed hosts:
 * The location of the inventory file
 * The connection protocol to use (by default, SSH)
@@ -243,7 +243,7 @@ Ansible on the control node needs some information to successfully connect to ma
 * Whether to prompt for an SSH password to log in or a **sudo** password to gain privileges
 You can set default selections for this information in your Ansible configuration file.
 
-### 2.3 Configuring Ansible
+## 2.3 Configuring Ansible
 The behaviour of an Ansible installation can be customized by modifying settings in the Ansible configuration file. Ansible chooses its configuration from one of several possible locations:
 * The ANSIBLE_CONFIG environment variable (if set, its value is the path to the file)
 * If it is not set, Ansible will look for the configuration file in the following places:
@@ -254,7 +254,7 @@ The behaviour of an Ansible installation can be customized by modifying settings
 * **/etc/ansible/ansible.cfg**
   * The default configuration file if no other configuration file is found
 
-### 2.4 Configuration File Precedence
+## 2.4 Configuration File Precedence
 * **ansible --version** clearly identifies which configuration file is currently being used.
   ```bash
   user@conotrolnode:~$ ansible --version
@@ -267,7 +267,7 @@ The behaviour of an Ansible installation can be customized by modifying settings
   ```
 * You can use ansible-config --version to get the same information.
 
-### 2.5 Managing Settings in the Configuration File
+## 2.5 Managing Settings in the Configuration File
 * ansible.cfg consists of several sections.
 * Each section contains settings defined as key-value pairs.
 * Section titles are enclosed in square brackets.
@@ -275,7 +275,7 @@ The behaviour of an Ansible installation can be customized by modifying settings
   * **[defaults]** sets defaults for Ansible operation.
   * **[privilege_escalation]** configures how Ansible performs privilege escalation on managed hosts.
 
-### 2.6 Connection Settings in the Configuration File
+## 2.6 Connection Settings in the Configuration File
 * Settings to control your SSH connection can go in the **[defaults]** section:
   * **remote_user** specifies the user you want to use on the managed host (if you do not specify, it uses your current user name)
   * **remote_port** specifies what port sshd is using on the managed host
@@ -283,7 +283,7 @@ The behaviour of an Ansible installation can be customized by modifying settings
   * **ask_pass** controls whether Ansible will prompt you for the SSH password
 (it will not by default, assuming you are using SSH key-based authentication)
 
-### 2.7 Privilege Escalation Settings in the Configuration File
+## 2.7 Privilege Escalation Settings in the Configuration File
 * Settings to control privilege escalation can go in the **[privilege_escalation]** section:
   * **become** controls whether you will automatically use privilege escalation
 (default is no, and you can override this at the command line or in playbooks)
@@ -294,7 +294,7 @@ The behaviour of an Ansible installation can be customized by modifying settings
   * **become_ask_pass** controls whether to prompt you for a password for your become method
 (default is no)
 
-### 2.8 Managing Settings in the Configuration File
+## 2.8 Managing Settings in the Configuration File
 * For example, the following is a typical **ansible.cfg** file:
   ```ini
   [defaults]
@@ -307,7 +307,7 @@ The behaviour of an Ansible installation can be customized by modifying settings
   become_ask_pass = false
   ```
 
-### 2.9 Host-Based Connection Variables
+## 2.9 Host-Based Connection Variables
 * You can also apply settings specific to a particular host by setting connection variables
 * There are several ways to do this
 * One of the easiest is to place the settings in a file in the host_vars directory in the same directory as your inventory file:
@@ -324,7 +324,7 @@ The behaviour of an Ansible installation can be customized by modifying settings
 * These settings override the ones in ansible.cfg
 * They also have slightly different syntax and naming
 
-### 2.10 Host-Based Connection and Privilege Escalation Variables
+## 2.10 Host-Based Connection and Privilege Escalation Variables
 * **ansible_host** specifies a different IP address or hostname to use for the connection for this host instead of the one in the inventory
 * **ansible_port** specifies the port to use for the SSH connection on this host
 * **ansible_user** specifies the user you want to use on this host
@@ -332,7 +332,7 @@ The behaviour of an Ansible installation can be customized by modifying settings
 * **ansible_become_user** specifies the user to become on this host
 * **ansible_become_method** specifies the privilege escalation method to use for this host
 
-### 2.11 Example Host-Based Connection Variables File
+## 2.11 Example Host-Based Connection Variables File
 * For example, the contents of host_vars/server1.example.com could be:
   ```bssh
   ---
@@ -344,7 +344,7 @@ The behaviour of an Ansible installation can be customized by modifying settings
   ```
 * These settings only affect server1.example.com in the inventory
 
-### 2.12 Preparation on the Managed Host
+## 2.12 Preparation on the Managed Host
 * One of the more common choices is to set up SSH key-based authentication to an unprivileged
 account that can use **sudo** to become root without a password
 * The advantage of this is that you can use a specific account that only Ansible uses, and tie that to a particular SSH private key, but still have "passwordless" authentication
@@ -391,7 +391,7 @@ become = true
 become_user = root
 become_ask_pass = false
 ```
-## Host-Based Connection Variables
+# Host-Based Connection Variables
 ```bash
 project
 ├── ansible.cfg
@@ -401,7 +401,7 @@ project
 └── inventory
 # They also have slightly different syntax and naming
 ```
-## Host-Based Connection and Privilege Escalation Variables
+# Host-Based Connection and Privilege Escalation Variables
 - **ansible_host**: specifies a different IP address or hostname to use for the connection for this host 
 instead of the one in the inventory
 - **ansible_port**: specifies the port to use for the SSH connection on this host
@@ -409,7 +409,7 @@ instead of the one in the inventory
 - **ansible_become**: specifies whether to use privilege escalation for this host
 - **ansible_become_user**: specifies the user to become on this host
 - **ansible_become_method**: specifies the privilege escalation method to use for this host 
-## Preparation on the Managed Host
+# Preparation on the Managed Host
 - One of the more common choices is to set up SSH key-based authentication to an unprivileged 
 account that can use sudo to become root without a password
 - The advantage of this is that you can use a specific account that only Ansible uses, and tie that to a 
@@ -459,7 +459,7 @@ rpi301 | SUCCESS => {
     "ping": "pong"
 }
 ```
-## Overriding Default Configuration Settings
+# Overriding Default Configuration Settings
 - To override a default configuration setting there are several different options. 
 - These options override the configuration in the **ansible.cfg** configuration file.
   - **-k** or **--ask-pass** will prompt for the connection password.
@@ -476,7 +476,7 @@ The default is **sudo**. Find valid choices using **ansible-doc -t become -l**
 - Most tasks are idempotent and can be safely run a second time without problems.
 - Playbooks can change lengthy, complex manual administrative tasks into an easily repeatable routine
 with predictable and successful outcomes.
-## Playbook formatting
+# Playbook formatting
 - A playbook is saved using the standard file extension .yml.
 - Indentation with space character indicates the structure of the data in the file.
 - Two‑space indentation with the space character only is the main concept behind the syntax within YAML files. Note that the spaces cannot be substituted with the tab character. The tab character is not allowed in proper YAML. YAML doesn't place strict requirements on how many spaces are used for the indentation.

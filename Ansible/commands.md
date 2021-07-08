@@ -24,18 +24,18 @@ Source: https://app.pluralsight.com/library/courses/ansible-fundamentals/table-o
   * [2.8 Running Arbitrary Commands on Managed Hosts](#28-running-arbitrary-commands-on-managed-hosts)
   * [2.9 When to Use Ad Hoc Commands](#29-when-to-use-ad-hoc-commands)
 
-## 1. Running Ad-Hoc Commands
+# 1. Running Ad-Hoc Commands
 Objectives
 This module explains how Ansible automation tasks can use ad hoc commands to execute a single Ansible
 task quickly.
 
-### 1.1 Ad Hoc Commands
+## 1.1 Ad Hoc Commands
 * Ad hoc commands are simple, one line operations that are run without writing a playbook.
 * They are useful for quick tests and changes.
 * For example, to start a service or ensure a line exists in a file.
 * Ad hoc commands have limitations.
 
-### 1.2 Ansible Modules
+## 1.2 Ansible Modules
 * Ansible provides modules, code that can be used to automate particular tasks
 * Some uses of modules:
   * Ensure users exist with certain settings
@@ -46,7 +46,7 @@ task quickly.
 Idempotent modules can be run safely multiple times.
 * An ad hoc command runs one module on the specified managed hosts.
 
-### 1.3 Running Ad Hoc Commands
+## 1.3 Running Ad Hoc Commands
 * The **ansible** command runs an ad hoc command
 * Its **host-pattern** argument specifies the managed hosts to run on.
 * Its **-m** option names the module that Ansible should run.
@@ -68,7 +68,7 @@ Idempotent modules can be run safely multiple times.
   }
   ```
 
-### 1.4 Overriding Default Configuration Settings
+## 1.4 Overriding Default Configuration Settings
 * To override a default configuration setting there are several different options.
 * These options override the configuration in the ansible.cfg configuration file.
   * **-k** or **--ask-pass** will prompt for the connection password.
@@ -78,7 +78,7 @@ Idempotent modules can be run safely multiple times.
   * **--become-method** will override the default privilege escalation method.
 The default is **sudo**. Find valid choices using **ansible-doc -t become -l**.
 
-### 1.5 Ansible Modules
+## 1.5 Ansible Modules
 * Most modules take arguments to control them.
 * Use the -a option to pass arguments.
 * This example uses the user
@@ -104,7 +104,7 @@ example.com | CHANGED => {
 }
 ```
 
-### 1.6 Selected Ansible Command-line Options
+## 1.6 Selected Ansible Command-line Options
 A number of command line directives can be used to override options from the Ansible configuration file:
 |Configuration File Directives|Command-line Option|
 |---|---|
@@ -115,19 +115,19 @@ A number of command line directives can be used to override options from the Ans
 |become_user|--become-user|
 |become_ask_pass|--ask-become-pass, -K|
 
-## 2. Selecting Modules for Ad Hoc Commands
+# 2. Selecting Modules for Ad Hoc Commands
 Objective
 * This module explains how Ansible ad hoc commands leverage Ansible modules to perform singular
 command line interactions with managed hosts.
 
-### 2.1 Finding Information about Ansible Modules
+## 2.1 Finding Information about Ansible Modules
 * The **ansible-doc -l** command lists all modules installed on a system.
 * The name and a description of the module are displayed.
 * Thousands of modules are available: consider piping the output into **grep** to filter the result.
 * The same information is available from the Ansible website:
 https://docs.ansible.com/ansible/latest/modules/modules_by_category.html
 
-### 2.2 Selected Ansible Modules
+## 2.2 Selected Ansible Modules
 There are thousands of modules to perform tasks. Some selected modules include:
 * File Modules:
   * **copy**: Copy a local file to the manages host
@@ -148,7 +148,7 @@ There are thousands of modules to perform tasks. Some selected modules include:
   * **nmcli**: Manage networking
   * **uri**: Interact with web services and communicate with APIs
 
-### 2.3 Getting Information about an Ansible Module
+## 2.3 Getting Information about an Ansible Module
 * **ansible-doc** can also provide information on how to use a module.
 * For example:
   ```bash
@@ -171,7 +171,7 @@ There are thousands of modules to perform tasks. Some selected modules include:
   [..output omitted..]
   ```
 
-### 2.4 Ad Hoc Command Example: User Creation
+## 2.4 Ad Hoc Command Example: User Creation
 * You can use the ansible-doc -l command to discover the user module
   ```bash
   user              Manage user accounts
@@ -189,7 +189,7 @@ ansible all -m user -a 'name=newbie uid=4000 state=present
 ansible all -m user -a 'name=newbie uid=4000 state=present'
 ```
 
-### 2.5 Ad Hoc Command Example: Group Management
+## 2.5 Ad Hoc Command Example: Group Management
 * The **user** module can be used to adjust group membership.
 * Run **ansible-doc** user again to find out how the module works:
   * **group** sets the user's primary group
@@ -201,7 +201,7 @@ or removing newbie from other groups:
 ansible all -m user -a 'name=newbie groups=developers,wheel append=yes state=present'
 ```
 
-### 2.6 Ad Hoc Command Example: Software Package Installation
+## 2.6 Ad Hoc Command Example: Software Package Installation
 * You can use the ansible-doc -l command to discover the package module
   ```bash
   package              Generic OS package manager
@@ -217,7 +217,7 @@ ansible all -m package -a 'name=httpd state=present'
 * Other modules are also available, including **yum, dnf, and apt**, that work in a similar way but which
 might support more sophisticated options specific to those managers.
 
-### 2.7 Command Modules
+## 2.7 Command Modules
 * There are a handful of modules that run commands directly on the managed host
 * You can use these if no other module is available to do what you need
 * They are **not idempotent**: you must make sure that they are safe to run twice when using them
@@ -226,7 +226,7 @@ might support more sophisticated options specific to those managers.
 * **raw** simply runs a command with no processing (can be dangerous)
 * In general, you should use regular modules if you can before resorting to these
 
-### 2.8 Running Arbitrary Commands on Managed Hosts
+## 2.8 Running Arbitrary Commands on Managed Hosts
 * The **command** module allows administrators to run arbitrary commands.
 * It cannot access shell environment variables or perform shell operations such as redirection and
 piping.
@@ -250,7 +250,7 @@ piping.
 * The **raw** module can run commands directly using the remote shell, bypassing the module subsystem.
 * This is useful when managing systems that cannot have Python installed (for example a network
 router).
-### 2.9 When to Use Ad Hoc Commands
+## 2.9 When to Use Ad Hoc Commands
 * Ad hoc commands are useful when you need to make one quick change to a large number of systems
 * This can be very powerful when you need to make a simple change quickly
 * However, they have a number of disadvantages:
@@ -298,7 +298,7 @@ become = true
 become_user = root
 become_ask_pass = false
 ```
-## Host-Based Connection Variables
+# Host-Based Connection Variables
 ```bash
 project
 ├── ansible.cfg
@@ -308,7 +308,7 @@ project
 └── inventory
 # They also have slightly different syntax and naming
 ```
-## Host-Based Connection and Privilege Escalation Variables
+# Host-Based Connection and Privilege Escalation Variables
 - **ansible_host**: specifies a different IP address or hostname to use for the connection for this host 
 instead of the one in the inventory
 - **ansible_port**: specifies the port to use for the SSH connection on this host
@@ -316,7 +316,7 @@ instead of the one in the inventory
 - **ansible_become**: specifies whether to use privilege escalation for this host
 - **ansible_become_user**: specifies the user to become on this host
 - **ansible_become_method**: specifies the privilege escalation method to use for this host 
-## Preparation on the Managed Host
+# Preparation on the Managed Host
 - One of the more common choices is to set up SSH key-based authentication to an unprivileged 
 account that can use sudo to become root without a password
 - The advantage of this is that you can use a specific account that only Ansible uses, and tie that to a 
@@ -366,7 +366,7 @@ rpi301 | SUCCESS => {
     "ping": "pong"
 }
 ```
-## Overriding Default Configuration Settings
+# Overriding Default Configuration Settings
 - To override a default configuration setting there are several different options. 
 - These options override the configuration in the **ansible.cfg** configuration file.
   - **-k** or **--ask-pass** will prompt for the connection password.
@@ -383,7 +383,7 @@ The default is **sudo**. Find valid choices using **ansible-doc -t become -l**
 - Most tasks are idempotent and can be safely run a second time without problems.
 - Playbooks can change lengthy, complex manual administrative tasks into an easily repeatable routine
 with predictable and successful outcomes.
-## Playbook formatting
+# Playbook formatting
 - A playbook is saved using the standard file extension .yml.
 - Indentation with space character indicates the structure of the data in the file.
 - Two‑space indentation with the space character only is the main concept behind the syntax within YAML files. Note that the spaces cannot be substituted with the tab character. The tab character is not allowed in proper YAML. YAML doesn't place strict requirements on how many spaces are used for the indentation.
