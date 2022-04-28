@@ -1,5 +1,6 @@
 # Powershell
 
+```powershell
 Get-Command                                               # Retrieves a list of all the commands available to PowerShell
                                                           # (native binaries in $env:PATH + cmdlets / functions from PowerShell modules)
 Get-Command -Module Microsoft*                            # Retrieves a list of all the PowerShell commands exported from modules named Microsoft*
@@ -225,3 +226,4 @@ Get-Process | Group-Object -Property Name                   # Group objects by p
 Get-Process | Sort-Object -Property Id                      # Sort objects by a given property name
 Get-Process | Where-Object -FilterScript { $PSItem.Name -match '^c' } # Filter objects based on a property matching a value
 gps | where Name -match '^c'                                # Abbreviated form of the previous statement
+```
