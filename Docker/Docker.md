@@ -1,9 +1,27 @@
 ## Docker install
+
+Please refer to the official documentation for installation [guide](https://docs.docker.com/engine/install/)
+
+## Docker Containers
 ```bash
-# Install Docker
-curl -fsSL https://get.docker.com -o get-docker.sh && sh get-docker.sh
-# Add user to docker group
-sudo usermod -aG docker $USER
+# Start Docker HelloWorld container
+docker run hello-world
+# Stop Docker HelloWorkd container
+docker stop hello-world
+# Stop all running containers:
+docker container stop $(docker container ls -aq)
+# Remove all running containers:
+docker container rm $(docker container ls -aq)
+# Stop and remove all containers:
+docker stop $(docker container ls -aq) && docker rm $(docker container ls -aq)
+# Stop and remove all containers (shorthand):
+docker rm -f [container_name]
+#Remove all caches images:
+docker rmi $(docker images -a -q)
+# Get interactive shell on specified container
+docker exec -it [container_name or container_ID] bash
+# Rename container
+docker rename old_name new_name
 ```
 
 ## Docker Images
@@ -61,24 +79,6 @@ docker volume rm [VOLUME_NAME]
 docker volume rm $(docker volume ls -q)
 ```
 
-## Docker Containers
-```bash
-# Stop all running containers:
-docker container stop $(docker container ls -aq)
-# Remove all running containers:
-docker container rm $(docker container ls -aq)
-# Stop and remove all containers:
-docker stop $(docker container ls -aq) && docker rm $(docker container ls -aq)
-# Stop and remove all containers (shorthand):
-docker rm -f [container_name]
-#Remove all caches images:
-docker rmi $(docker images -a -q)
-# Get interactive shell on specified container
-docker exec -it [container_name or container_ID] bash
-# Rename container
-docker rename old_name new_name
-```
-
 ## Docker compose
 ```bash
 # To run docker-compose
@@ -88,3 +88,8 @@ docker-compose up -d
 # down
 docker-compose down
 ```
+
+
+
+## Other resources
+[More Docker cheatsheet](https://github.com/LeCoupa/awesome-cheatsheets/blob/master/tools/docker.sh)
