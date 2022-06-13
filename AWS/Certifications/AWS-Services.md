@@ -61,6 +61,9 @@ Amazon Virtual Private Cloud (Amazon VPC) enables you to provision a logically i
 With AWS CloudTrail, you can monitor your AWS deployments in the cloud by getting a history of AWS API calls for your account, including API calls made by using the AWS Management Console, the AWS SDKs, the command line tools, and higher-level AWS services. You can also identify which users and accounts called AWS APIs for services that support CloudTrail, the source IP address from which the calls were made, and when the calls occurred. You can integrate CloudTrail into applications using the API, automate trail creation for your organization, check the status of your trails, and control how administrators turn CloudTrail logging on and off.
 <br>
 
+### **AWS OpsWorks**
+AWS OpsWorks is a configuration management service that provides managed instances of Chef and Puppet. Chef and Puppet are automation platforms that allow you to use code to automate the configurations of your servers. OpsWorks lets you use Chef and Puppet to automate how servers are configured, deployed, and managed across your Amazon EC2 instances or on-premises compute environments. OpsWorks has three offerings, AWS Opsworks for Chef Automate, AWS OpsWorks for Puppet Enterprise, and AWS OpsWorks Stacks.
+
 ### **Amazon CloudWatch**
 Amazon CloudWatch is a monitoring and observability service built for DevOps engineers, developers, site reliability engineers (SREs), IT managers, and product owners. CloudWatch provides you with data and actionable insights to monitor your applications, respond to system-wide performance changes, and optimize resource utilization. CloudWatch collects monitoring and operational data in the form of logs, metrics, and events. You get a unified view of operational health and gain complete visibility of your AWS resources, applications, and services running on AWS and on-premises.
 <br>
@@ -209,4 +212,12 @@ Amazon Elastic Kubernetes Service (Amazon EKS) is a managed Kubernetes service t
 
 ### **Amazon EMR**
 Amazon EMR is a web service that makes it easy to process vast amounts of data efficiently using Apache Hadoop and services offered by Amazon Web Services.
+<br>
+
+### **AWS DeepLens**
+AWS DeepLens helps put machine learning in the hands of developers, literally, with a fully programmable video camera, tutorials, code, and pre-trained models designed to expand deep learning skills.
+<br>
+
+### **AWS Alexa Skills**
+Skills are like apps for Alexa, and provide a new channel for your content and services. Skills let customers use their voices to perform everyday tasks like checking the news, listening to music, playing a game, and more. Organizations and individuals can publish skills in the Alexa Skills Store to reach and delight customers on hundreds of millions of Alexa devices.
 <br>
