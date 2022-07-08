@@ -36,6 +36,7 @@ Table of content:
     - [**AWS DynamoDB**](#aws-dynamodb)
     - [**Amazon Aura**](#amazon-aura)
   - [**Networking and Content Delivery Services**](#networking-and-content-delivery-services)
+    - [**AWS Global Accelerator**](#aws-global-accelerator)
     - [**Amazon CloudFront**](#amazon-cloudfront)
     - [**Amazon Route 53**](#amazon-route-53)
     - [**AWS Virtual Private Network**](#aws-virtual-private-network)
@@ -205,6 +206,10 @@ Amazon Aurora is up to five times faster than standard MySQL databases and three
 
 
 ## **Networking and Content Delivery Services**
+
+### **AWS Global Accelerator**
+AWS Global Accelerator is a networking service that improves the performance of your users’ traffic by up to 60% using Amazon Web Services’ global network infrastructure. When the internet is congested, AWS Global Accelerator optimizes the path to your application to keep packet loss, jitter, and latency consistently low.
+<br>
 
 ### **Amazon CloudFront**
 Amazon CloudFront speeds up distribution of your static and dynamic web content, such as .html, .css, .php, image, and media files. When users request your content, CloudFront delivers it through a worldwide network of edge locations that provide low latency and high performance.
