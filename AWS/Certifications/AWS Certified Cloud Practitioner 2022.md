@@ -1,4 +1,22 @@
 # AWS Cloud Practitioner Exam Preparation
+
+- [AWS Cloud Practitioner Exam Preparation](#aws-cloud-practitioner-exam-preparation)
+  - [**AWS Global Infrastructure**](#aws-global-infrastructure)
+  - [**Six Advantages of Cloud Computing**](#six-advantages-of-cloud-computing)
+  - [**Shared Responsability Model**](#shared-responsability-model)
+  - [**AWS Support plans**](#aws-support-plans)
+    - [**Plans details**:](#plans-details)
+  - [AWS Leadership Principles](#aws-leadership-principles)
+  - [**AWS Well-Architected Framework (Six pillars):**](#aws-well-architected-framework-six-pillars)
+  - [**Disaster recovery options in the cloud**](#disaster-recovery-options-in-the-cloud)
+  - [**Amazon EC2 pricing models (Five)**](#amazon-ec2-pricing-models-five)
+  - [**CAPEX vs OPEX**](#capex-vs-opex)
+  - [**Not to forget**](#not-to-forget)
+    - [Some words:](#some-words)
+    - [**Security**](#security)
+    - [**Amazon VPC-to-Amazon VPC**](#amazon-vpc-to-amazon-vpc)
+    - [**AWS Pricing/TCO Tools**](#aws-pricingtco-tools)
+
 ## **AWS Global Infrastructure**
 <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fjayendrapatil.com%2Fwp-content%2Fuploads%2F2016%2F03%2Fscreen-shot-2016-03-20-at-3-06-22-pm.png&f=1&nofb=1" width="100%">
 The AWS Global Cloud Infrastructure is the most secure, extensive, and reliable cloud platform, offering over 200 fully featured services from data centers globally
