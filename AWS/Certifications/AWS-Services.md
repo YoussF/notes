@@ -9,7 +9,7 @@ Table of content:
     - [**Amazon Elastic Compute Cloud (EC2)**](#amazon-elastic-compute-cloud-ec2)
   - [**Containers**](#containers)
     - [**Amazon Elastic Container Service (ECS)**](#amazon-elastic-container-service-ecs)
-    - [***Amazon Elastic Container Registry (ECR)**](#amazon-elastic-container-registry-ecr)
+    - [**Amazon Elastic Container Registry (ECR)**](#amazon-elastic-container-registry-ecr)
     - [**Amazon Elastic Kubernetes Service**](#amazon-elastic-kubernetes-service)
   - [**Security, Indentity, and Compliance Services**](#security-indentity-and-compliance-services)
     - [**AWS Certificate Manager**](#aws-certificate-manager)
@@ -99,7 +99,7 @@ Amazon Elastic Compute Cloud (Amazon EC2) is a web service that provides resizab
 Amazon Elastic Container Service (Amazon ECS) allows you to easily deploy containerized workloads on AWS. The powerful simplicity of Amazon ECS enables you to grow from a single Dock  er container to managing your entire enterprise application portfolio. Run and scale your container workloads across availability zones, in the cloud, and on-premises, without the complexity of managing a control plane or nodes.
 <br>
 
-### ***Amazon Elastic Container Registry (ECR)**
+### **Amazon Elastic Container Registry (ECR)**
 Easily store, manage, and deploy container images
 <br>
 
