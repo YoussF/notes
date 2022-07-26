@@ -12,6 +12,7 @@ Table of content:
     - [***Amazon Elastic Container Registry (ECR)**](#amazon-elastic-container-registry-ecr)
     - [**Amazon Elastic Kubernetes Service**](#amazon-elastic-kubernetes-service)
   - [**Security, Indentity, and Compliance Services**](#security-indentity-and-compliance-services)
+    - [**AWS Certificate Manager**](#aws-certificate-manager)
     - [**AWS CloudHSM**](#aws-cloudhsm)
     - [**AWS WAF**](#aws-waf)
     - [**AWS Shield**](#aws-shield)
@@ -107,6 +108,10 @@ Amazon Elastic Kubernetes Service (Amazon EKS) is a managed Kubernetes service t
 <br>
 
 ## **Security, Indentity, and Compliance Services**
+
+### **AWS Certificate Manager**
+AWS Certificate Manager is a service that lets you easily provision, manage, and deploy public and private Secure Sockets Layer/Transport Layer Security (SSL/TLS) certificates for use with AWS services and your internal connected resources. SSL/TLS certificates are used to secure network communications and establish the identity of websites over the Internet as well as resources on private networks. AWS Certificate Manager removes the time-consuming manual process of purchasing, uploading, and renewing SSL/TLS certificates.
+<br>
 
 ### **AWS CloudHSM**
 AWS CloudHSM offers secure cryptographic key storage for customers by providing managed hardware security modules in the AWS Cloud.
